@@ -11,7 +11,7 @@
 * Take faucet: https://faucet.0g.ai/
 
 
-# Install All Required Dependecies
+# Install All Required Dependencies
 
 ```
 sudo apt-get update && sudo apt-get upgrade -y
