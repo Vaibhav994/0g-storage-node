@@ -4,13 +4,6 @@
 
 </div>
 
-# Pre-Requirements 🛠
-
-* Add 0G-Galileo-Testnet chain from here: https://docs.0g.ai/run-a-node/testnet-information
-
-* Take faucet: https://faucet.0g.ai/
-
-
 # Install All Required Dependencies
 
 ```
@@ -58,6 +51,15 @@ cd 0g-storage-node && git checkout v1.1.0 && git submodule update --init
 ```
 cargo build --release
 ```
+
+# Wallet Setup
+
+* Create a new burner wallet for 0G labs Storage Node. 
+
+* Add 0G-Galileo-Testnet chain from here: https://docs.0g.ai/run-a-node/testnet-information
+
+* Take faucet: https://faucet.0g.ai/
+
 
 # Set Configurations
 
