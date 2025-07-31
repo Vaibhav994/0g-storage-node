@@ -1,10 +1,6 @@
-<div align="center">
+# **0G Storage Node Guide** 
 
-#  👨🏻‍💻 **0G Storage Node Guide** 👨🏻‍💻
-
-</div>
-
-# Install All Required Dependencies
+## Install All Required Dependencies
 
 ```
 sudo apt-get update && sudo apt-get upgrade -y
@@ -14,7 +10,7 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo apt install curl iptables build-essential git wget lz4 jq make protobuf-compiler cmake gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev screen ufw -y
 ```
 
-* Install rustup
+### 1️⃣ Install rustup
 
 ```
 curl https://sh.rustup.rs -sSf | sh
@@ -24,7 +20,7 @@ source $HOME/.cargo/env
 ```
 
 
-* Install go
+### 2️⃣ Install go
 
 ```
 wget https://go.dev/dl/go1.24.3.linux-amd64.tar.gz && \
@@ -36,7 +32,7 @@ source ~/.bashrc
 ```
 
 
-# Clone the Repository
+### 3️⃣ Clone the Repository
 
 ```
 git clone https://github.com/0glabs/0g-storage-node.git
@@ -46,13 +42,15 @@ git clone https://github.com/0glabs/0g-storage-node.git
 cd 0g-storage-node && git checkout v1.1.0 && git submodule update --init
 ```
 
-* Build in release mode 
+### 4️⃣ Build in release mode 
 
 ```
 cargo build --release
 ```
 
-# Wallet Setup
+---
+
+## Wallet Setup
 
 * Create a new burner wallet for 0G labs Storage Node. 
 
@@ -60,8 +58,9 @@ cargo build --release
 
 * Take faucet: https://faucet.0g.ai/
 
+---
 
-# Set Configurations
+## Set Configurations
 
 ```
 rm -rf $HOME/0g-storage-node/run/config.toml
@@ -70,7 +69,6 @@ rm -rf $HOME/0g-storage-node/run/config.toml
 ```
 curl -o $HOME/0g-storage-node/run/config.toml https://raw.githubusercontent.com/Vaibhav994/0g-storage-node/main/config.toml
 ```
-
 
 * Add Your Wallet's Private KEY in `config.toml`, ❗❗Dont Add **0X** before the key:
 
@@ -82,12 +80,13 @@ sed -i 's|miner_key = "Your_Wallet_Private_key_Without_0x"|miner_key = "abcd123_
 ```
 <img width="1549" height="179" alt="image" src="https://github.com/user-attachments/assets/a855be7d-7150-438d-8adf-652ac27bc032" />
 
+---
 
-# If u want to change RPC then follow this:
+### If u want to change RPC then follow this:
 
-1. Get rpc from here - https://www.astrostake.xyz/0g-status
+1️⃣ Get rpc from here - https://www.astrostake.xyz/0g-status
 
-2. Chooose any rpc and replace "your_0glabs_rpc" in command below
+2️⃣ Chooose any rpc and replace "your_0glabs_rpc" in command below
 
 ```
 sed -i 's|blockchain_rpc_endpoint = "https://evmrpc-testnet.0g.ai"|blockchain_rpc_endpoint = "your_0glabs_rpc"|' /root/0g-storage-node/run/config.toml
@@ -96,8 +95,9 @@ sed -i 's|blockchain_rpc_endpoint = "https://evmrpc-testnet.0g.ai"|blockchain_rp
 
 <img width="1424" height="161" alt="image" src="https://github.com/user-attachments/assets/e25a3c5f-1151-4274-9b66-0c1795b6f4b7" />
 
+---
 
-# Create a Systemd Service File
+## Create a Systemd Service File
 
 ```
 sudo tee /etc/systemd/system/zgs.service > /dev/null <<EOF
@@ -136,8 +136,9 @@ sudo systemctl enable zgs
 sudo systemctl start zgs
 ```
 
+---
 
-# Managing Logs
+## Managing Logs
 
 ```
 sudo systemctl status zgs
@@ -155,9 +156,9 @@ tail -f ~/0g-storage-node/run/log/zgs.log.$(TZ=UTC date +%Y-%m-%d)
  while true; do     response=$(curl -s -X POST http://localhost:5678 -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"zgs_getStatus","params":[],"id":1}');     logSyncHeight=$(echo $response | jq '.result.logSyncHeight');     connectedPeers=$(echo $response | jq '.result.connectedPeers');     echo -e "logSyncHeight: \033[32m$logSyncHeight\033[0m, connectedPeers: \033[34m$connectedPeers\033[0m";     sleep 5; done
 ```
 
+---
 
-
-# Stop & Delete the service
+## Stop & Delete the service
 
 ```
 sudo systemctl stop zgs
@@ -176,8 +177,6 @@ rm -rf $HOME/0g-storage-node
 * Explorer- (View your txs - Paste Your Address): https://chainscan-galileo.0g.ai/
 
 * View Miner Details- (Add your wallet address at the end of the link): https://storagescan-galileo.0g.ai/miner/
-
-DONE!!
 
 
 
