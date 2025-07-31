@@ -9,7 +9,7 @@
 
 ---
 
-## Install All Required Dependencies
+## Install Required Dependencies 🛠
 
 ```
 sudo apt-get update && sudo apt-get upgrade -y
@@ -179,7 +179,7 @@ sudo rm /etc/systemd/system/zgs.service
 rm -rf $HOME/0g-storage-node
 ```
 
-
+---
 
 ## Explorer & Useful Webs
 
