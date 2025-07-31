@@ -2,10 +2,10 @@
 
 ## Requirements
 
-1️⃣ Ram needed 16/32
-2️⃣ Minimum Cores 6/8
-3️⃣ Storage needed 500-1000 GB
-4️⃣ Bandwidth 100Mbps
+*  Ram needed 16/32
+*  Minimum Cores 6/8
+*  Storage needed 500-1000 GB
+*  Bandwidth 100Mbps
 
 ---
 
