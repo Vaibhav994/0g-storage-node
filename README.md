@@ -1,9 +1,13 @@
 # **0G Storage Node Guide** 
 
 ## Requirements
-1️⃣ Ram needed 8/32 atleast
-2️⃣ Storage needed 800-1000 GB
 
+1️⃣ Ram needed 16/32
+2️⃣ Minimum Cores 6/8
+3️⃣ Storage needed 500-1000 GB
+4️⃣ Bandwidth 100Mbps
+
+---
 
 ## Install All Required Dependencies
 
