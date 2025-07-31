@@ -1,5 +1,10 @@
 # **0G Storage Node Guide** 
 
+## Requirements
+1️⃣ Ram needed 8/32 atleast
+2️⃣ Storage needed 800-1000 GB
+
+
 ## Install All Required Dependencies
 
 ```
