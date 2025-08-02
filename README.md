@@ -84,7 +84,7 @@ curl -o $HOME/0g-storage-node/run/config.toml https://raw.githubusercontent.com/
 -Replace "abcd123_YourPrivateKEY_abc123" with your private key(without0x).
 
 ```
-sed -i 's|miner_key = "Your_Wallet_Private_key_Without_0x"|miner_key = "abcd123_YourPrivateKEY_abc123"|' /root/0g-storage-node/run/config.toml
+sed -i 's|miner_key = "Your_Wallet_Private_key_Without_0x"|miner_key = "abcd123_YourPrivateKEY_abc123"|' $HOME/0g-storage-node/run/config.toml
 
 ```
 <img width="1549" height="179" alt="image" src="https://github.com/user-attachments/assets/a855be7d-7150-438d-8adf-652ac27bc032" />
@@ -98,7 +98,7 @@ sed -i 's|miner_key = "Your_Wallet_Private_key_Without_0x"|miner_key = "abcd123_
 2️⃣ Chooose any rpc and replace "your_0glabs_rpc" in command below
 
 ```
-sed -i 's|blockchain_rpc_endpoint = "https://evmrpc-testnet.0g.ai"|blockchain_rpc_endpoint = "your_0glabs_rpc"|' /root/0g-storage-node/run/config.toml
+sed -i 's|blockchain_rpc_endpoint = "https://evmrpc-testnet.0g.ai"|blockchain_rpc_endpoint = "your_0glabs_rpc"|' $HOME/0g-storage-node/run/config.toml
 
 ```
 
